@@ -131,7 +131,7 @@
       cursor: pointer;
     }
 
-    /* Hero */
+    /* Home and photograph */
 
     .hero {
       background:
@@ -139,7 +139,14 @@
         rgba(178, 138, 80, 0.2), transparent 35%),
         var(--green);
       color: white;
-      padding: 100px 0;
+      padding: 85px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
+      align-items: center;
+      gap: 55px;
     }
 
     .hero .eyebrow {
@@ -147,8 +154,9 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.5rem, 7vw, 4.8rem);
+      font-size: clamp(2.3rem, 5vw, 4.3rem);
       margin-bottom: 20px;
+      overflow-wrap: anywhere;
     }
 
     .hero h1 span {
@@ -174,6 +182,7 @@
       border-radius: 5px;
       border: 1px solid var(--gold);
       font-weight: bold;
+      transition: opacity 0.2s;
     }
 
     .button-primary {
@@ -188,6 +197,72 @@
 
     .button:hover {
       opacity: 0.85;
+    }
+
+    /* Temporary portrait placeholder.
+       Later, replace this placeholder with the real image. */
+
+    .portrait-frame {
+      width: 100%;
+      max-width: 340px;
+      justify-self: end;
+      padding: 10px;
+      border: 1px solid rgba(225, 193, 139, 0.7);
+      border-radius: 180px 180px 12px 12px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .portrait-placeholder {
+      aspect-ratio: 4 / 5;
+      border-radius: 170px 170px 6px 6px;
+      border: 1px dashed rgba(225, 193, 139, 0.8);
+      background:
+        linear-gradient(
+          155deg,
+          rgba(225, 193, 139, 0.12),
+          rgba(255, 255, 255, 0.02)
+        );
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .portrait-symbol {
+      width: 86px;
+      height: 86px;
+      border: 2px solid #e1c18b;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      color: #e1c18b;
+      font-family: Georgia, serif;
+      font-size: 2.5rem;
+    }
+
+    .portrait-placeholder h2 {
+      color: #e1c18b;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .portrait-placeholder p {
+      color: #e0e6e1;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .portrait-caption {
+      color: #e1c18b;
+      font-size: 0.78rem;
+      text-align: center;
+      margin-top: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     /* Biography */
@@ -352,7 +427,7 @@
       color: #e0e6e1;
     }
 
-    /* Contact section */
+    /* Contact */
 
     .contact {
       background: var(--cream);
@@ -455,7 +530,7 @@
       font-size: 0.9rem;
     }
 
-    /* Mobile layout */
+    /* Tablet */
 
     @media (max-width: 850px) {
       .nav-links {
@@ -466,11 +541,18 @@
         font-size: 0.8rem;
       }
 
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(200px, 0.7fr);
+        gap: 28px;
+      }
+
       .creative-grid,
       .works-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
+
+    /* Mobile */
 
     @media (max-width: 650px) {
       .menu-toggle {
@@ -505,7 +587,21 @@
       }
 
       .hero {
-        padding: 70px 0;
+        padding: 60px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 10vw, 3.4rem);
+      }
+
+      .portrait-frame {
+        width: min(100%, 300px);
+        justify-self: center;
       }
 
       .section {
@@ -546,7 +642,6 @@
   <!-- MAIN NAVIGATION -->
   <header>
     <nav class="navbar container" aria-label="Main navigation">
-
       <a class="logo" href="#home">Prof Nurain.</a>
 
       <button
@@ -566,38 +661,51 @@
         <li><a href="#works">Featured Works</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-
     </nav>
   </header>
 
   <main>
 
-    <!-- HOME -->
+    <!-- HOME AND PHOTOGRAPH PLACEHOLDER -->
     <section class="hero" id="home">
-      <div class="container">
+      <div class="container hero-grid">
 
-        <p class="eyebrow">Writer · Artist · Technologist</p>
+        <div class="hero-content">
+          <p class="eyebrow">Writer · Artist · Technologist</p>
 
-        <h1>
-          Nuraini Mohammad Usman,
-          <span>Prof Nurain.</span>
-        </h1>
+          <h1>
+            Nuraini Mohammad Usman,
+            <span>Prof Nurain.</span>
+          </h1>
 
-        <p class="hero-description">
-          A Nigerian poet, storyteller, photographer, creative
-          artist, essayist, and proud feminist. His artistry flows
-          through words, images, and emotions, blending creativity
-          with conviction to tell stories that matter.
-        </p>
+          <p class="hero-description">
+            A Nigerian poet, storyteller, photographer, creative
+            artist, essayist, and proud feminist. His artistry flows
+            through words, images, and emotions, blending creativity
+            with conviction to tell stories that matter.
+          </p>
 
-        <div class="hero-buttons">
-          <a href="#about" class="button button-primary">
-            Discover My Story
-          </a>
+          <div class="hero-buttons">
+            <a href="#about" class="button button-primary">
+              Discover My Story
+            </a>
 
-          <a href="#works" class="button button-outline">
-            Explore My Works
-          </a>
+            <a href="#works" class="button button-outline">
+              Explore My Works
+            </a>
+          </div>
+        </div>
+
+        <!-- Replace this placeholder with the real portrait later. -->
+        <div class="portrait-frame">
+          <div class="portrait-placeholder">
+            <div class="portrait-symbol" aria-hidden="true">N</div>
+            <h2>Photograph Coming Soon</h2>
+            <p>
+              Prof Nurain's official portrait will appear here.
+            </p>
+          </div>
+          <p class="portrait-caption">Nuraini Mohammad Usman</p>
         </div>
 
       </div>
@@ -606,14 +714,11 @@
     <!-- BIOGRAPHY -->
     <section class="section" id="about">
       <div class="container">
-
         <p class="eyebrow">The Story Behind the Name</p>
         <h2>About Prof Nurain</h2>
 
         <div class="about-grid">
-
           <div class="about-text">
-
             <p>
               Nuraini Mohammad Usman, also known as Prof Nurain,
               is a Nigerian poet, story writer and teller,
@@ -642,24 +747,20 @@
               continues to develop his artistic voice while
               building his technical knowledge.
             </p>
-
           </div>
 
           <aside class="quote-card">
             <h3>Creativity with Conviction</h3>
-
             <p>
               Words can express what the heart feels. Images can
               preserve what the eyes see. Stories can help people
               understand one another.
             </p>
-
             <p style="margin-top: 15px;">
               Prof Nurain brings together artistic expression,
               curiosity, and a vision for the future.
             </p>
           </aside>
-
         </div>
       </div>
     </section>
@@ -667,7 +768,6 @@
     <!-- EDUCATION -->
     <section class="section education" id="education">
       <div class="container">
-
         <p class="eyebrow">Learning and Growth</p>
         <h2>Educational Journey</h2>
 
@@ -677,7 +777,6 @@
         </p>
 
         <div class="education-grid">
-
           <article class="education-card">
             <h3>01. Dayamas Model School</h3>
             <p>
@@ -713,20 +812,17 @@
             <h3>
               05. Maryam Abacha American University of Niger
             </h3>
-
             <p>
               Nuraini is a 200-level Software Engineering student
               at Maryam Abacha American University of Niger
               (MAAUN), Maradi, Niger Republic.
             </p>
-
             <p style="margin-top: 10px;">
               His studies reflect his interest in technology
               and his desire to combine technical skills with
               creative thinking.
             </p>
           </article>
-
         </div>
       </div>
     </section>
@@ -734,7 +830,6 @@
     <!-- CREATIVE INTERESTS -->
     <section class="section" id="creative">
       <div class="container">
-
         <p class="eyebrow">Many Interests, One Vision</p>
         <h2>The Creative World of Prof Nurain</h2>
 
@@ -744,7 +839,6 @@
         </p>
 
         <div class="creative-grid">
-
           <article class="creative-card">
             <div class="number">01</div>
             <h3>Poetry</h3>
@@ -798,7 +892,6 @@
               his identity, values, and creative expression.
             </p>
           </article>
-
         </div>
       </div>
     </section>
@@ -806,7 +899,6 @@
     <!-- FEATURED WORKS -->
     <section class="section works" id="works">
       <div class="container">
-
         <p class="eyebrow">Ideas Becoming Art</p>
         <h2>Featured Works</h2>
 
@@ -817,52 +909,41 @@
         </p>
 
         <div class="works-grid">
-
           <article class="work-card">
             <div class="work-art" aria-hidden="true">01</div>
-
             <div class="work-content">
               <h3>Poetry Collection</h3>
               <p>
                 A collection of poems exploring emotions,
                 identity, society, and life.
               </p>
-              <span class="placeholder-label">
-                Work coming soon
-              </span>
+              <span class="placeholder-label">Work coming soon</span>
             </div>
           </article>
 
           <article class="work-card">
             <div class="work-art" aria-hidden="true">02</div>
-
             <div class="work-content">
               <h3>Stories and Narratives</h3>
               <p>
                 A space for original short stories,
                 longer narratives, and imaginative worlds.
               </p>
-              <span class="placeholder-label">
-                Work coming soon
-              </span>
+              <span class="placeholder-label">Work coming soon</span>
             </div>
           </article>
 
           <article class="work-card">
             <div class="work-art" aria-hidden="true">03</div>
-
             <div class="work-content">
               <h3>Photography and Essays</h3>
               <p>
                 A gallery for photographs, essays,
                 reflections, and creative writing.
               </p>
-              <span class="placeholder-label">
-                Work coming soon
-              </span>
+              <span class="placeholder-label">Work coming soon</span>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -870,12 +951,10 @@
     <!-- FUTURE AMBITION -->
     <section class="section ambition" id="ambition">
       <div class="container">
-
         <p class="eyebrow">Looking Ahead</p>
         <h2>A Vision for the Future</h2>
 
         <div class="ambition-text">
-
           <p>
             Ambitious and driven by purpose, Nuraini dreams
             of becoming a lecturer in the future. He pursues
@@ -895,7 +974,6 @@
             resilience, and the power of creativity to
             transform lives.
           </p>
-
         </div>
       </div>
     </section>
@@ -903,7 +981,6 @@
     <!-- CONTACT INFORMATION -->
     <section class="section contact" id="contact">
       <div class="container">
-
         <p class="eyebrow">Let's Connect</p>
         <h2>Contact Prof Nurain</h2>
 
@@ -914,164 +991,87 @@
         </p>
 
         <div class="contact-grid">
-
-          <!-- EMAIL -->
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">✉</div>
             <h3>Email Address</h3>
             <p>Send an email directly.</p>
-
             <a href="mailto:usmannurainimohammad@gmail.com">
               usmannurainimohammad@gmail.com
             </a>
           </article>
 
-          <!-- PHONE -->
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">☎</div>
             <h3>Phone Number</h3>
             <p>Call or save the contact.</p>
-
-            <a href="tel:+2348063448848">
-              08063448848
-            </a>
+            <a href="tel:+2348063448848">08063448848</a>
           </article>
 
-          <!-- INSTAGRAM -->
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">◎</div>
             <h3>Instagram</h3>
             <p>Follow the creative journey.</p>
-
-            <a
-              href="https://www.instagram.com/nurainimohammadu?exln=MTM4c2N2N2l6eGdjYw=="
-              target="_blank"
-              rel="noopener noreferrer">
+            <a href="https://www.instagram.com/nurainimohammadu?exln=MTM4c2N2N2l6eGdjYw==" target="_blank" rel="noopener noreferrer">
               @nurainimohammadu
             </a>
           </article>
 
-          <!-- X / TWITTER -->
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">𝕏</div>
             <h3>X / Twitter</h3>
             <p>Connect and follow updates.</p>
-
-            <a
-              href="https://x.com/prof_Nurain"
-              target="_blank"
-              rel="noopener noreferrer">
+            <a href="https://x.com/prof_Nurain" target="_blank" rel="noopener noreferrer">
               @prof_Nurain
             </a>
           </article>
 
-          <!-- FACEBOOK -->
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">f</div>
             <h3>Facebook</h3>
             <p>Visit the Facebook profile.</p>
-
-            <a
-              href="https://www.facebook.com/share/19iP1weZt3/"
-              target="_blank"
-              rel="noopener noreferrer">
+            <a href="https://www.facebook.com/share/19iP1weZt3/" target="_blank" rel="noopener noreferrer">
               Visit Facebook
             </a>
           </article>
 
-          <!-- TIKTOK -->
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">♪</div>
             <h3>TikTok</h3>
             <p>Explore videos and creative content.</p>
-
-            <a
-              href="https://www.tiktok.com/@nurainimohammadusman"
-              target="_blank"
-              rel="noopener noreferrer">
+            <a href="https://www.tiktok.com/@nurainimohammadusman" target="_blank" rel="noopener noreferrer">
               @nurainimohammadusman
             </a>
           </article>
 
-          <!-- YOUTUBE -->
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">▶</div>
             <h3>YouTube</h3>
             <p>Visit the YouTube channel.</p>
-
-            <a
-              href="https://youtube.com/@nurainimohammadusman?si=1SsKrEhSTULFFLgS"
-              target="_blank"
-              rel="noopener noreferrer">
+            <a href="https://youtube.com/@nurainimohammadusman?si=1SsKrEhSTULFFLgS" target="_blank" rel="noopener noreferrer">
               Prof Nurain on YouTube
             </a>
           </article>
 
-          <!-- LINKEDIN -->
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">in</div>
             <h3>LinkedIn</h3>
             <p>Connect professionally.</p>
-
-            <a
-              href="https://www.linkedin.com/in/nuraini-mohammad-usman-272053375?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-              target="_blank"
-              rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/nuraini-mohammad-usman-272053375?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">
               Nuraini Mohammad Usman on LinkedIn
             </a>
           </article>
-
         </div>
 
-        <!-- SOCIAL MEDIA SHORTCUTS -->
         <h3 class="social-heading">Find Me on Social Media</h3>
 
         <div class="social-links">
-
-          <a
-            href="https://www.instagram.com/nurainimohammadu?exln=MTM4c2N2N2l6eGdjYw=="
-            target="_blank"
-            rel="noopener noreferrer">
-            Instagram
-          </a>
-
-          <a
-            href="https://x.com/prof_Nurain"
-            target="_blank"
-            rel="noopener noreferrer">
-            X / Twitter
-          </a>
-
-          <a
-            href="https://www.facebook.com/share/19iP1weZt3/"
-            target="_blank"
-            rel="noopener noreferrer">
-            Facebook
-          </a>
-
-          <a
-            href="https://www.tiktok.com/@nurainimohammadusman"
-            target="_blank"
-            rel="noopener noreferrer">
-            TikTok
-          </a>
-
-          <a
-            href="https://youtube.com/@nurainimohammadusman?si=1SsKrEhSTULFFLgS"
-            target="_blank"
-            rel="noopener noreferrer">
-            YouTube
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/nuraini-mohammad-usman-272053375?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-            target="_blank"
-            rel="noopener noreferrer">
-            LinkedIn
-          </a>
-
+          <a href="https://www.instagram.com/nurainimohammadu?exln=MTM4c2N2N2l6eGdjYw==" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://x.com/prof_Nurain" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+          <a href="https://www.facebook.com/share/19iP1weZt3/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.tiktok.com/@nurainimohammadusman" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://youtube.com/@nurainimohammadusman?si=1SsKrEhSTULFFLgS" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.linkedin.com/in/nuraini-mohammad-usman-272053375?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-
       </div>
     </section>
 
@@ -1080,12 +1080,8 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-
       <p class="footer-name">Prof Nurain</p>
-
-      <p>
-        Words, images, ideas, and a vision for tomorrow.
-      </p>
+      <p>Words, images, ideas, and a vision for tomorrow.</p>
 
       <p style="margin-top: 12px;">
         &copy; <span id="currentYear"></span>
@@ -1095,7 +1091,6 @@
       <p style="margin-top: 8px;">
         Built with creativity and purpose.
       </p>
-
     </div>
   </footer>
 

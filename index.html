@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover the biography, poetry, art, essays, and creative journey of Nuraini Mohammad Usman, popularly known as Prof Nurain.">
+  <meta name="description" content="Official biography website of Nuraini Mohammad Usman, popularly known as Prof Nurain. Explore his poetry, stories, photography, education and creative journey.">
   <meta name="author" content="Nuraini Mohammad Usman">
-  <meta name="theme-color" content="#173b2b">
-  <title>Prof Nurain | Biography, Poetry & Creative Works</title>
+  <meta name="theme-color" content="#142b24">
+
+  <title>Prof Nurain | Official Biography</title>
 
   <style>
     :root {
-      --green: #173b2b;
-      --gold: #c49a48;
+      --green: #142b24;
+      --green-light: #23483a;
+      --gold: #b28a50;
       --cream: #f8f5ed;
       --white: #ffffff;
-      --text: #30362f;
-      --muted: #6b7169;
-      --border: #e8e0d0;
+      --text: #343b36;
+      --muted: #6c746e;
+      --border: #e4ded1;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -31,7 +33,7 @@
     }
 
     body {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: var(--cream);
       color: var(--text);
       line-height: 1.8;
@@ -43,21 +45,53 @@
     }
 
     .container {
-      width: min(1120px, 90%);
+      width: min(1100px, 90%);
       margin: auto;
     }
 
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--green);
+      margin-bottom: 18px;
+    }
+
+    .section {
+      padding: 75px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    /* Navigation */
+
     header {
-      background: var(--green);
-      color: var(--white);
       position: sticky;
       top: 0;
-      z-index: 100;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+      z-index: 1000;
+      background: var(--green);
+      color: white;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
     }
 
     .navbar {
-      min-height: 76px;
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -65,806 +99,1031 @@
     }
 
     .logo {
-      font-size: 1.4rem;
+      color: #e1c18b;
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
       font-weight: bold;
-      letter-spacing: 1px;
       white-space: nowrap;
     }
 
-    .logo span,
-    h1 span {
-      color: var(--gold);
-    }
-
-    nav {
+    .nav-links {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 18px;
+      gap: 20px;
+      list-style: none;
     }
 
-    nav a {
-      font: 0.82rem Arial, sans-serif;
-      color: #f4f0e8;
+    .nav-links a {
+      font-size: 0.9rem;
     }
 
-    nav a:hover {
-      color: var(--gold);
+    .nav-links a:hover {
+      color: #e1c18b;
     }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 7px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Hero */
 
     .hero {
-      background: linear-gradient(115deg, #173b2b 0%, #24533d 100%);
-      color: var(--white);
-      padding: 95px 0;
+      background:
+        radial-gradient(circle at 90% 15%,
+        rgba(178, 138, 80, 0.2), transparent 35%),
+        var(--green);
+      color: white;
+      padding: 100px 0;
     }
 
-    .hero-content {
-      display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      align-items: center;
-      gap: 55px;
+    .hero .eyebrow {
+      color: #e1c18b;
     }
 
-    .eyebrow {
-      color: var(--gold);
-      font: bold 0.78rem Arial, sans-serif;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
+    .hero h1 {
+      font-size: clamp(2.5rem, 7vw, 4.8rem);
+      margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: clamp(2.7rem, 6vw, 4.7rem);
-      line-height: 1.12;
-      font-weight: normal;
-      margin-bottom: 22px;
+    .hero h1 span {
+      color: #e1c18b;
     }
 
     .hero-description {
-      color: #e9eee9;
-      font-size: 1.08rem;
+      max-width: 720px;
+      color: #e0e6e1;
+      font-size: 1.1rem;
       margin-bottom: 30px;
-      max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .button {
       display: inline-block;
       padding: 12px 22px;
+      border-radius: 5px;
       border: 1px solid var(--gold);
-      background: var(--gold);
-      color: #182b20;
-      font: bold 0.9rem Arial, sans-serif;
-      margin: 0 8px 8px 0;
-      transition: 0.2s;
+      font-weight: bold;
     }
 
-    .button:hover {
-      background: transparent;
-      color: var(--gold);
+    .button-primary {
+      background: var(--gold);
+      color: white;
     }
 
     .button-outline {
-      background: transparent;
-      color: var(--white);
+      color: white;
+      border-color: #e1c18b;
     }
 
-    .portrait-placeholder {
-      min-height: 310px;
-      border: 1px solid rgba(196, 154, 72, 0.7);
-      background: rgba(255, 255, 255, 0.04);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px;
+    .button:hover {
+      opacity: 0.85;
     }
 
-    .initials {
-      width: 105px;
-      height: 105px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
+    /* Biography */
+
+    .about-grid {
       display: grid;
-      place-items: center;
-      color: var(--gold);
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .portrait-placeholder p {
-      color: #e5e9e3;
-      font: 0.88rem Arial, sans-serif;
-    }
-
-    section {
-      padding: 82px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 45px;
-    }
-
-    .section-heading .eyebrow {
-      margin-bottom: 8px;
-    }
-
-    h2 {
-      color: var(--green);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: normal;
-      line-height: 1.25;
-      margin-bottom: 15px;
-    }
-
-    .section-heading > p:last-child {
-      color: var(--muted);
-    }
-
-    .biography-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 0.7fr;
-      gap: 45px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
       align-items: start;
     }
 
-    .biography-text p {
-      margin-bottom: 20px;
+    .about-text p {
+      margin-bottom: 18px;
     }
 
-    .fact-card {
-      background: var(--white);
-      padding: 28px;
-      border-top: 4px solid var(--gold);
-      box-shadow: 0 8px 30px rgba(26, 45, 32, 0.06);
+    .quote-card {
+      padding: 30px;
+      border-left: 5px solid var(--gold);
+      border-radius: 6px;
+      background: var(--green);
+      color: white;
     }
 
-    .fact-card h3 {
-      color: var(--green);
-      font-size: 1.4rem;
-      margin-bottom: 17px;
-      font-weight: normal;
+    .quote-card h3 {
+      color: #e1c18b;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
     }
 
-    .fact {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
+    /* Education */
 
-    .fact:last-child {
-      border-bottom: none;
-    }
-
-    .fact strong {
-      display: block;
-      color: var(--green);
-      font: bold 0.78rem Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-
-    .fact span {
-      color: var(--muted);
-      font-size: 0.96rem;
-      overflow-wrap: anywhere;
-    }
-
-    .creative-section {
+    .education,
+    .works {
       background: #efe9dc;
     }
 
-    .creative-grid {
+    .education-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .education-card {
+      padding: 25px;
+      background: white;
+      border-bottom: 3px solid var(--gold);
+      border-radius: 6px;
+    }
+
+    .education-card h3 {
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .current-study {
+      grid-column: 1 / -1;
+      background: var(--green);
+      color: white;
+    }
+
+    .current-study h3 {
+      color: #e1c18b;
+    }
+
+    /* Creative interests */
+
+    .creative-grid,
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .creative-card {
-      background: var(--white);
-      padding: 30px 25px;
-      border-bottom: 3px solid var(--gold);
-      transition: transform 0.2s, box-shadow 0.2s;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 25px;
     }
 
-    .creative-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(26, 45, 32, 0.09);
-    }
-
-    .creative-number {
+    .creative-card .number {
+      font-family: Georgia, serif;
       color: var(--gold);
-      font-size: 1.8rem;
-      margin-bottom: 10px;
+      font-size: 2rem;
     }
 
     .creative-card h3 {
       color: var(--green);
-      margin-bottom: 10px;
-      font-size: 1.35rem;
-      font-weight: normal;
+      margin: 8px 0;
     }
 
     .creative-card p {
       color: var(--muted);
-      font-size: 0.95rem;
     }
 
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
+    /* Featured works */
 
     .work-card {
-      background: var(--white);
+      background: white;
       border: 1px solid var(--border);
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      border-radius: 6px;
+      overflow: hidden;
     }
 
-    .work-type {
-      font: bold 0.72rem Arial, sans-serif;
-      color: #8c6a2b;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
+    .work-art {
+      min-height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--green);
+      color: #e1c18b;
+      font-family: Georgia, serif;
+      font-size: 2.5rem;
+    }
+
+    .work-content {
+      padding: 22px;
+    }
+
+    .work-content h3 {
+      color: var(--green);
       margin-bottom: 10px;
     }
 
-    .work-card h3 {
-      color: var(--green);
-      font-size: 1.35rem;
-      font-weight: normal;
-      line-height: 1.4;
-      margin-bottom: 12px;
-    }
-
-    .work-card p {
+    .work-content p {
       color: var(--muted);
-      margin-bottom: 20px;
-      flex-grow: 1;
-      font-size: 0.95rem;
+      margin-bottom: 15px;
     }
 
-    .work-link {
+    .placeholder-label {
+      display: inline-block;
+      background: #f3ead8;
+      color: #795b31;
+      padding: 4px 9px;
+      font-size: 0.8rem;
+      border-radius: 3px;
+    }
+
+    /* Future ambition */
+
+    .ambition {
+      background: var(--green);
+      color: white;
+    }
+
+    .ambition h2 {
+      color: white;
+    }
+
+    .ambition .section-intro {
+      color: #e0e6e1;
+    }
+
+    .ambition-text {
+      max-width: 800px;
+      border-left: 4px solid var(--gold);
+      padding-left: 25px;
+    }
+
+    .ambition-text p {
+      margin-bottom: 16px;
+      color: #e0e6e1;
+    }
+
+    /* Contact section */
+
+    .contact {
+      background: var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .contact-card {
+      min-width: 0;
+      padding: 22px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      overflow-wrap: anywhere;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(20, 43, 36, 0.08);
+    }
+
+    .contact-card h3 {
       color: var(--green);
-      font: bold 0.88rem Arial, sans-serif;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 3px;
+      font-size: 1.15rem;
+      margin-bottom: 7px;
     }
 
-    .work-link:hover {
-      color: #8c6a2b;
-    }
-
-    .placeholder-note {
-      margin-top: 28px;
-      padding: 17px 20px;
-      border-left: 3px solid var(--gold);
-      background: #f5f0e5;
+    .contact-card p {
       color: var(--muted);
       font-size: 0.9rem;
-    }
-
-    .journey-section {
-      background: var(--green);
-      color: var(--white);
-    }
-
-    .journey-section h2 {
-      color: var(--white);
-    }
-
-    .journey-section .section-heading > p:last-child {
-      color: #d9e1d9;
-    }
-
-    .timeline {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .timeline-item {
-      border-left: 2px solid var(--gold);
-      padding: 0 0 32px 28px;
-      position: relative;
-    }
-
-    .timeline-item:last-child {
-      padding-bottom: 0;
-    }
-
-    .timeline-item::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--gold);
-      position: absolute;
-      left: -6px;
-      top: 9px;
-    }
-
-    .timeline-item h3 {
-      color: var(--gold);
-      font-weight: normal;
-      font-size: 1.25rem;
       margin-bottom: 5px;
     }
 
-    .timeline-item p {
-      color: #e0e7e0;
+    .contact-card a {
+      color: #8a622e;
+      font-weight: 600;
+      overflow-wrap: anywhere;
     }
 
-    .contact-content {
-      max-width: 780px;
-      margin: auto;
-      text-align: center;
+    .contact-card a:hover {
+      text-decoration: underline;
     }
 
-    .contact-content > p {
-      color: var(--muted);
-      margin-bottom: 18px;
+    .contact-icon {
+      font-size: 1.5rem;
+      margin-bottom: 7px;
     }
 
-    .contact-links {
+    .social-heading {
+      margin-top: 40px;
+      color: var(--green);
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+    }
+
+    .social-links {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 12px;
-      margin-bottom: 25px;
+      margin-top: 18px;
     }
 
-    .contact-links a {
+    .social-links a {
       display: inline-block;
-      padding: 10px 15px;
-      background: var(--white);
-      border: 1px solid var(--border);
+      padding: 9px 16px;
+      border: 1px solid var(--gold);
+      border-radius: 5px;
       color: var(--green);
-      font: 0.87rem Arial, sans-serif;
-      overflow-wrap: anywhere;
+      font-weight: bold;
       transition: 0.2s;
     }
 
-    .contact-links a:hover {
+    .social-links a:hover {
       background: var(--green);
-      color: var(--white);
-      border-color: var(--green);
+      color: white;
     }
 
-    .contact-details a {
-      color: var(--green);
-      text-decoration: underline;
-      text-decoration-color: var(--gold);
-      overflow-wrap: anywhere;
-    }
+    /* Footer */
 
     footer {
-      background: #10291e;
-      color: #dfe5dd;
-      padding: 28px 0;
+      background: #0c1d17;
+      color: #d5ddd7;
+      padding: 30px 0;
       text-align: center;
-      font: 0.85rem Arial, sans-serif;
     }
 
-    footer strong {
-      color: var(--gold);
+    .footer-name {
+      color: #e1c18b;
+      font-family: Georgia, serif;
+      font-size: 1.4rem;
+      margin-bottom: 5px;
     }
 
-    footer p + p {
-      margin-top: 5px;
-      color: #b8c4b8;
+    footer p {
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 800px) {
-      .navbar {
-        padding: 15px 0;
-        flex-direction: column;
+    /* Mobile layout */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        gap: 12px;
       }
 
-      nav {
-        justify-content: center;
-        gap: 12px 17px;
+      .nav-links a {
+        font-size: 0.8rem;
+      }
+
+      .creative-grid,
+      .works-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar {
+        min-height: 70px;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        padding: 12px 5% 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 9px 0;
+        font-size: 1rem;
       }
 
       .hero {
         padding: 70px 0;
       }
 
-      .hero-content,
-      .biography-grid {
+      .section {
+        padding: 55px 0;
+      }
+
+      .about-grid,
+      .education-grid,
+      .creative-grid,
+      .works-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .portrait-placeholder {
-        min-height: 240px;
+      .current-study {
+        grid-column: auto;
       }
 
-      .creative-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .hero-description {
+        font-size: 1rem;
       }
     }
 
-    @media (max-width: 560px) {
-      section {
-        padding: 60px 0;
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
 
-      .creative-grid,
-      .works-grid {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 2.7rem;
-      }
-
-      .contact-links {
-        flex-direction: column;
-      }
-
-      .contact-links a {
-        width: 100%;
+      * {
+        transition: none !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="container navbar">
-      <a class="logo" href="#home">PROF <span>NURAIN</span></a>
 
-      <nav aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#biography">Biography</a>
-        <a href="#creative-work">Creative Work</a>
-        <a href="#featured-works">Featured Works</a>
-        <a href="#journey">Journey</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+  <!-- MAIN NAVIGATION -->
+  <header>
+    <nav class="navbar container" aria-label="Main navigation">
+
+      <a class="logo" href="#home">Prof Nurain.</a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks">
+        Menu ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Biography</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#creative">Creative Work</a></li>
+        <li><a href="#works">Featured Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </nav>
   </header>
 
   <main>
+
+    <!-- HOME -->
     <section class="hero" id="home">
-      <div class="container hero-content">
-        <div>
-          <p class="eyebrow">Writer · Artist · Storyteller</p>
-          <h1>Nuraini Mohammad <span>Usman</span></h1>
+      <div class="container">
 
-          <p class="hero-description">
-            Known as Prof Nurain, he is a Nigerian slithering poet,
-            story writer and teller, photographer, creeping artist,
-            essayist, and proud feminist. His artistry flows through
-            words, images, and emotions — blending creativity with
-            conviction to tell stories that matter.
-          </p>
+        <p class="eyebrow">Writer · Artist · Technologist</p>
 
-          <a class="button" href="#biography">Discover His Story</a>
-          <a class="button button-outline" href="#featured-works">Explore His Works</a>
+        <h1>
+          Nuraini Mohammad Usman,
+          <span>Prof Nurain.</span>
+        </h1>
+
+        <p class="hero-description">
+          A Nigerian poet, storyteller, photographer, creative
+          artist, essayist, and proud feminist. His artistry flows
+          through words, images, and emotions, blending creativity
+          with conviction to tell stories that matter.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#about" class="button button-primary">
+            Discover My Story
+          </a>
+
+          <a href="#works" class="button button-outline">
+            Explore My Works
+          </a>
         </div>
 
-        <div class="portrait-placeholder" aria-label="Portrait placeholder">
-          <div class="initials">PN</div>
-          <p><strong>Prof Nurain</strong></p>
-          <p>Portrait photograph to be added</p>
-        </div>
       </div>
     </section>
 
-    <section id="biography">
+    <!-- BIOGRAPHY -->
+    <section class="section" id="about">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">The Person Behind the Art</p>
-          <h2>Biography</h2>
-          <p>
-            A journey shaped by family, education, imagination,
-            literature, and creative expression.
-          </p>
-        </div>
 
-        <div class="biography-grid">
-          <div class="biography-text">
+        <p class="eyebrow">The Story Behind the Name</p>
+        <h2>About Prof Nurain</h2>
+
+        <div class="about-grid">
+
+          <div class="about-text">
+
             <p>
-              Nuraini Mohammad Usman, also known as Prof Nurain, is a
-              Nigerian slithering poet, story writer and teller,
-              photographer, creeping artist, essayist, and a proud
-              feminist. His artistry flows through words, images, and
-              emotions — blending creativity with conviction to tell
-              stories that matter.
+              Nuraini Mohammad Usman, also known as Prof Nurain,
+              is a Nigerian poet, story writer and teller,
+              photographer, creative artist, essayist, and a proud
+              feminist. His artistry flows through words, images,
+              and emotions, blending creativity with conviction
+              to tell stories that matter.
             </p>
 
             <p>
-              Born into and raised in the Muyawa family, in Kano State,
-              and brought up in Minna, Niger State, Nuraini’s diverse
-              background deeply influences his artistic vision and
-              expression.
+              Born into and raised in the Muyawa family in Kano
+              State, and brought up in Minna, Niger State,
+              Nuraini's diverse background deeply influences his
+              artistic vision and expression.
             </p>
 
             <p>
-              He began his educational journey at Dayamas Model School
-              for his kindergarten and nursery education, continued to
-              Better Treasure International School for his primary
-              level, and then to Al-Fawzu Azeem Academy for his junior
-              secondary education. Later, he moved to Legend
-              International School, where he completed both his junior
-              and senior secondary studies with excellence.
+              His interests span literature, visual storytelling,
+              photography, and the relationship between technology
+              and creativity. He uses creative expression to explore
+              ideas, emotions, and human experiences.
             </p>
 
             <p>
-              Currently, Nuraini is a 200-level Software Engineering
-              student at Maryam Abacha American University of Niger
-              Republic (MAAUN), Maradi. He beautifully bridges the
-              world of art and technology, embodying creativity in
-              both thought and practice.
+              Currently pursuing Software Engineering, Nuraini
+              continues to develop his artistic voice while
+              building his technical knowledge.
             </p>
 
-            <p>
-              Ambitious and driven by purpose, Nuraini dreams of
-              becoming a lecturer in the future — a vision he pursues
-              with passion, discipline, and the steadfast support of
-              his parents. His story stands as a testament to talent,
-              resilience, and the power of creativity to transform lives.
-            </p>
           </div>
 
-          <aside class="fact-card">
-            <h3>At a Glance</h3>
+          <aside class="quote-card">
+            <h3>Creativity with Conviction</h3>
 
-            <div class="fact">
-              <strong>Full Name</strong>
-              <span>Nuraini Mohammad Usman</span>
-            </div>
+            <p>
+              Words can express what the heart feels. Images can
+              preserve what the eyes see. Stories can help people
+              understand one another.
+            </p>
 
-            <div class="fact">
-              <strong>Known As</strong>
-              <span>Prof Nurain</span>
-            </div>
-
-            <div class="fact">
-              <strong>Nationality</strong>
-              <span>Nigerian</span>
-            </div>
-
-            <div class="fact">
-              <strong>Family Background</strong>
-              <span>Muyawa family</span>
-            </div>
-
-            <div class="fact">
-              <strong>Raised In</strong>
-              <span>Kano State and Minna, Niger State</span>
-            </div>
-
-            <div class="fact">
-              <strong>Education</strong>
-              <span>200-level Software Engineering student</span>
-            </div>
-
-            <div class="fact">
-              <strong>University</strong>
-              <span>MAAUN, Maradi, Niger Republic</span>
-            </div>
-
-            <div class="fact">
-              <strong>Future Ambition</strong>
-              <span>Lecturer</span>
-            </div>
+            <p style="margin-top: 15px;">
+              Prof Nurain brings together artistic expression,
+              curiosity, and a vision for the future.
+            </p>
           </aside>
+
         </div>
       </div>
     </section>
 
-    <section class="creative-section" id="creative-work">
+    <!-- EDUCATION -->
+    <section class="section education" id="education">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Many Forms of Expression</p>
-          <h2>A Creative Mind</h2>
-          <p>
-            Prof Nurain explores different ways to express ideas,
-            preserve experiences, and share meaningful stories.
-          </p>
+
+        <p class="eyebrow">Learning and Growth</p>
+        <h2>Educational Journey</h2>
+
+        <p class="section-intro">
+          Each stage of Nuraini's education has contributed to
+          his development and ambitions.
+        </p>
+
+        <div class="education-grid">
+
+          <article class="education-card">
+            <h3>01. Dayamas Model School</h3>
+            <p>
+              Began his educational journey with kindergarten
+              and nursery education.
+            </p>
+          </article>
+
+          <article class="education-card">
+            <h3>02. Better Treasure International School</h3>
+            <p>
+              Continued his education at the primary school level.
+            </p>
+          </article>
+
+          <article class="education-card">
+            <h3>03. Al-Fawzu Azeem Academy</h3>
+            <p>
+              Attended junior secondary education, building
+              the foundation for further academic growth.
+            </p>
+          </article>
+
+          <article class="education-card">
+            <h3>04. Legend International School</h3>
+            <p>
+              Completed his junior and senior secondary studies
+              at Legend International School.
+            </p>
+          </article>
+
+          <article class="education-card current-study">
+            <h3>
+              05. Maryam Abacha American University of Niger
+            </h3>
+
+            <p>
+              Nuraini is a 200-level Software Engineering student
+              at Maryam Abacha American University of Niger
+              (MAAUN), Maradi, Niger Republic.
+            </p>
+
+            <p style="margin-top: 10px;">
+              His studies reflect his interest in technology
+              and his desire to combine technical skills with
+              creative thinking.
+            </p>
+          </article>
+
         </div>
+      </div>
+    </section>
+
+    <!-- CREATIVE INTERESTS -->
+    <section class="section" id="creative">
+      <div class="container">
+
+        <p class="eyebrow">Many Interests, One Vision</p>
+        <h2>The Creative World of Prof Nurain</h2>
+
+        <p class="section-intro">
+          From the written word to the captured image, Nuraini
+          explores different ways of expressing ideas and emotions.
+        </p>
 
         <div class="creative-grid">
+
           <article class="creative-card">
-            <div class="creative-number">01</div>
+            <div class="number">01</div>
             <h3>Poetry</h3>
-            <p>Exploring feelings, ideas, and convictions through expressive language and poetic storytelling.</p>
+            <p>
+              Exploring emotions, imagery, language, and
+              perspectives through poetry.
+            </p>
           </article>
 
           <article class="creative-card">
-            <div class="creative-number">02</div>
+            <div class="number">02</div>
             <h3>Storytelling</h3>
-            <p>Bringing people, experiences, and imagination together through stories and narrative expression.</p>
+            <p>
+              Sharing experiences and imagination through
+              original stories and narratives.
+            </p>
           </article>
 
           <article class="creative-card">
-            <div class="creative-number">03</div>
+            <div class="number">03</div>
             <h3>Photography</h3>
-            <p>Capturing moments and perspectives through visual observation and creative photography.</p>
+            <p>
+              Capturing moments, details, and perspectives
+              through visual storytelling.
+            </p>
           </article>
 
           <article class="creative-card">
-            <div class="creative-number">04</div>
-            <h3>Visual Art</h3>
-            <p>Exploring visual ideas and creative expression through artistic practice.</p>
+            <div class="number">04</div>
+            <h3>Creative Art</h3>
+            <p>
+              Communicating ideas and exploring artistic
+              expression through visual creativity.
+            </p>
           </article>
 
           <article class="creative-card">
-            <div class="creative-number">05</div>
-            <h3>Essays</h3>
-            <p>Sharing reflections, arguments, and observations through thoughtful written work.</p>
+            <div class="number">05</div>
+            <h3>Essays and Writing</h3>
+            <p>
+              Examining ideas and communicating thoughts
+              through essays and written expression.
+            </p>
           </article>
 
           <article class="creative-card">
-            <div class="creative-number">06</div>
-            <h3>Creative Advocacy</h3>
-            <p>Using art and writing to explore identity, conviction, and issues that matter.</p>
+            <div class="number">06</div>
+            <h3>Feminism</h3>
+            <p>
+              Embracing a feminist perspective as part of
+              his identity, values, and creative expression.
+            </p>
           </article>
+
         </div>
       </div>
     </section>
 
-    <section id="featured-works">
+    <!-- FEATURED WORKS -->
+    <section class="section works" id="works">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Read and Explore</p>
-          <h2>Featured Works</h2>
-          <p>
-            Explore selected poetry, art, essays, and creative
-            contributions associated with Prof Nurain.
-          </p>
-        </div>
+
+        <p class="eyebrow">Ideas Becoming Art</p>
+        <h2>Featured Works</h2>
+
+        <p class="section-intro">
+          This section is ready for Nuraini's original poems,
+          stories, essays, photographs, and other creative works.
+          These are placeholders until the actual works are added.
+        </p>
 
         <div class="works-grid">
+
           <article class="work-card">
-            <span class="work-type">Poetry</span>
-            <h3>Poetry from Nuraini Mohammad Usman</h3>
-            <p>Read a published poetry feature showcasing his literary voice and creative expression.</p>
-            <a class="work-link" href="https://synchchaos.com/poetry-from-nuraini-mohammad-usman-2/" target="_blank" rel="noopener noreferrer">Read the Poetry ↗</a>
+            <div class="work-art" aria-hidden="true">01</div>
+
+            <div class="work-content">
+              <h3>Poetry Collection</h3>
+              <p>
+                A collection of poems exploring emotions,
+                identity, society, and life.
+              </p>
+              <span class="placeholder-label">
+                Work coming soon
+              </span>
+            </div>
           </article>
 
           <article class="work-card">
-            <span class="work-type">Poetry</span>
-            <h3>More Poetry by Nuraini Mohammad Usman</h3>
-            <p>Explore another poetry feature published on Synch Chaos.</p>
-            <a class="work-link" href="https://synchchaos.com/poetry-from-nuraini-mohammad-usman/" target="_blank" rel="noopener noreferrer">Read the Poetry ↗</a>
+            <div class="work-art" aria-hidden="true">02</div>
+
+            <div class="work-content">
+              <h3>Stories and Narratives</h3>
+              <p>
+                A space for original short stories,
+                longer narratives, and imaginative worlds.
+              </p>
+              <span class="placeholder-label">
+                Work coming soon
+              </span>
+            </div>
           </article>
 
           <article class="work-card">
-            <span class="work-type">Art and Photography</span>
-            <h3>Art from Nuraini Mohammad Usman</h3>
-            <p>Visit the featured page dedicated to his visual and artistic expression.</p>
-            <a class="work-link" href="https://synchchaos.com/art-from-nuraini-mohammad-usman/" target="_blank" rel="noopener noreferrer">Explore the Art ↗</a>
+            <div class="work-art" aria-hidden="true">03</div>
+
+            <div class="work-content">
+              <h3>Photography and Essays</h3>
+              <p>
+                A gallery for photographs, essays,
+                reflections, and creative writing.
+              </p>
+              <span class="placeholder-label">
+                Work coming soon
+              </span>
+            </div>
           </article>
 
-          <article class="work-card">
-            <span class="work-type">Essay</span>
-            <h3>Essay by Nuraini Mohammad Usman</h3>
-            <p>Read an essay feature associated with his writing and reflective work.</p>
-            <a class="work-link" href="https://synchchaos.com/essay-from-nuraini-mohamed-usman/" target="_blank" rel="noopener noreferrer">Read the Essay ↗</a>
-          </article>
-
-          <article class="work-card">
-            <span class="work-type">Creative Feature</span>
-            <h3>Splendors of Dawn</h3>
-            <p>Visit the supplied Facebook post connected with Splendors of Dawn.</p>
-            <a class="work-link" href="https://www.facebook.com/SplendorsOfDawn/posts/485361700826465/" target="_blank" rel="noopener noreferrer">View the Feature ↗</a>
-          </article>
-
-          <article class="work-card">
-            <span class="work-type">Future Feature</span>
-            <h3>More Creative Works Coming Soon</h3>
-            <p>This placeholder can be replaced when another confirmed poem, story, photograph, essay, or artwork is available.</p>
-            <span class="work-link">Future addition</span>
-          </article>
         </div>
-
-        <p class="placeholder-note">
-          <strong>Note:</strong> The final card is an intentional
-          placeholder, not a published work. It can be replaced when
-          new material is available.
-        </p>
       </div>
     </section>
 
-    <section class="journey-section" id="journey">
+    <!-- FUTURE AMBITION -->
+    <section class="section ambition" id="ambition">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Learning and Growth</p>
-          <h2>His Journey</h2>
-          <p>From early education to university studies and an expanding creative life.</p>
-        </div>
 
-        <div class="timeline">
-          <article class="timeline-item">
-            <h3>Early Education</h3>
-            <p>Dayamas Model School — kindergarten and nursery education.</p>
-          </article>
+        <p class="eyebrow">Looking Ahead</p>
+        <h2>A Vision for the Future</h2>
 
-          <article class="timeline-item">
-            <h3>Primary Education</h3>
-            <p>Better Treasure International School.</p>
-          </article>
+        <div class="ambition-text">
 
-          <article class="timeline-item">
-            <h3>Junior Secondary Education</h3>
-            <p>Al-Fawzu Azeem Academy.</p>
-          </article>
+          <p>
+            Ambitious and driven by purpose, Nuraini dreams
+            of becoming a lecturer in the future. He pursues
+            this vision with passion, discipline, and the
+            steadfast support of his parents.
+          </p>
 
-          <article class="timeline-item">
-            <h3>Secondary School Years</h3>
-            <p>Legend International School — junior and senior secondary education.</p>
-          </article>
+          <p>
+            As he advances in Software Engineering and develops
+            his artistic abilities, he hopes to keep learning,
+            sharing knowledge, and contributing meaningfully
+            through education and creativity.
+          </p>
 
-          <article class="timeline-item">
-            <h3>University and Technology</h3>
-            <p>
-              Currently studying Software Engineering at Maryam Abacha
-              American University of Niger Republic (MAAUN), Maradi,
-              as a 200-level student.
-            </p>
-          </article>
+          <p>
+            His journey stands as a testament to talent,
+            resilience, and the power of creativity to
+            transform lives.
+          </p>
 
-          <article class="timeline-item">
-            <h3>A Future in Education</h3>
-            <p>
-              Working toward his ambition of becoming a lecturer,
-              supported by his passion, discipline, and family.
-            </p>
-          </article>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="container contact-content">
-        <div class="section-heading">
-          <p class="eyebrow">Connect and Follow</p>
-          <h2>Contact Prof Nurain</h2>
-          <p>
-            Follow his creative journey, explore his online platforms,
-            or contact him using the details below.
-          </p>
+    <!-- CONTACT INFORMATION -->
+    <section class="section contact" id="contact">
+      <div class="container">
+
+        <p class="eyebrow">Let's Connect</p>
+        <h2>Contact Prof Nurain</h2>
+
+        <p class="section-intro">
+          Connect with Nuraini Mohammad Usman through his
+          social media profiles, send him an email, or contact
+          him by telephone.
+        </p>
+
+        <div class="contact-grid">
+
+          <!-- EMAIL -->
+          <article class="contact-card">
+            <div class="contact-icon" aria-hidden="true">✉</div>
+            <h3>Email Address</h3>
+            <p>Send an email directly.</p>
+
+            <a href="mailto:usmannurainimohammad@gmail.com">
+              usmannurainimohammad@gmail.com
+            </a>
+          </article>
+
+          <!-- PHONE -->
+          <article class="contact-card">
+            <div class="contact-icon" aria-hidden="true">☎</div>
+            <h3>Phone Number</h3>
+            <p>Call or save the contact.</p>
+
+            <a href="tel:+2348063448848">
+              08063448848
+            </a>
+          </article>
+
+          <!-- INSTAGRAM -->
+          <article class="contact-card">
+            <div class="contact-icon" aria-hidden="true">◎</div>
+            <h3>Instagram</h3>
+            <p>Follow the creative journey.</p>
+
+            <a
+              href="https://www.instagram.com/nurainimohammadu?exln=MTM4c2N2N2l6eGdjYw=="
+              target="_blank"
+              rel="noopener noreferrer">
+              @nurainimohammadu
+            </a>
+          </article>
+
+          <!-- X / TWITTER -->
+          <article class="contact-card">
+            <div class="contact-icon" aria-hidden="true">𝕏</div>
+            <h3>X / Twitter</h3>
+            <p>Connect and follow updates.</p>
+
+            <a
+              href="https://x.com/prof_Nurain"
+              target="_blank"
+              rel="noopener noreferrer">
+              @prof_Nurain
+            </a>
+          </article>
+
+          <!-- FACEBOOK -->
+          <article class="contact-card">
+            <div class="contact-icon" aria-hidden="true">f</div>
+            <h3>Facebook</h3>
+            <p>Visit the Facebook profile.</p>
+
+            <a
+              href="https://www.facebook.com/share/19iP1weZt3/"
+              target="_blank"
+              rel="noopener noreferrer">
+              Visit Facebook
+            </a>
+          </article>
+
+          <!-- TIKTOK -->
+          <article class="contact-card">
+            <div class="contact-icon" aria-hidden="true">♪</div>
+            <h3>TikTok</h3>
+            <p>Explore videos and creative content.</p>
+
+            <a
+              href="https://www.tiktok.com/@nurainimohammadusman"
+              target="_blank"
+              rel="noopener noreferrer">
+              @nurainimohammadusman
+            </a>
+          </article>
+
+          <!-- YOUTUBE -->
+          <article class="contact-card">
+            <div class="contact-icon" aria-hidden="true">▶</div>
+            <h3>YouTube</h3>
+            <p>Visit the YouTube channel.</p>
+
+            <a
+              href="https://youtube.com/@nurainimohammadusman?si=1SsKrEhSTULFFLgS"
+              target="_blank"
+              rel="noopener noreferrer">
+              Prof Nurain on YouTube
+            </a>
+          </article>
+
+          <!-- LINKEDIN -->
+          <article class="contact-card">
+            <div class="contact-icon" aria-hidden="true">in</div>
+            <h3>LinkedIn</h3>
+            <p>Connect professionally.</p>
+
+            <a
+              href="https://www.linkedin.com/in/nuraini-mohammad-usman-272053375?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+              target="_blank"
+              rel="noopener noreferrer">
+              Nuraini Mohammad Usman on LinkedIn
+            </a>
+          </article>
+
         </div>
 
-        <div class="contact-links">
-          <a href="https://www.instagram.com/nurainimohammadu?exln=MTM4c2N2N2l6eGdjYw==" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-          <a href="https://x.com/prof_Nurain" target="_blank" rel="noopener noreferrer">X (Twitter) ↗</a>
-          <a href="https://www.facebook.com/share/19iP1weZt3/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
-          <a href="https://www.tiktok.com/@nurainimohammadusman" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
-          <a href="https://youtube.com/@nurainimohammadusman?si=1SsKrEhSTULFFLgS" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+        <!-- SOCIAL MEDIA SHORTCUTS -->
+        <h3 class="social-heading">Find Me on Social Media</h3>
+
+        <div class="social-links">
+
+          <a
+            href="https://www.instagram.com/nurainimohammadu?exln=MTM4c2N2N2l6eGdjYw=="
+            target="_blank"
+            rel="noopener noreferrer">
+            Instagram
+          </a>
+
+          <a
+            href="https://x.com/prof_Nurain"
+            target="_blank"
+            rel="noopener noreferrer">
+            X / Twitter
+          </a>
+
+          <a
+            href="https://www.facebook.com/share/19iP1weZt3/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Facebook
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@nurainimohammadusman"
+            target="_blank"
+            rel="noopener noreferrer">
+            TikTok
+          </a>
+
+          <a
+            href="https://youtube.com/@nurainimohammadusman?si=1SsKrEhSTULFFLgS"
+            target="_blank"
+            rel="noopener noreferrer">
+            YouTube
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/nuraini-mohammad-usman-272053375?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn
+          </a>
+
         </div>
 
-        <div class="contact-details">
-          <p>
-            Email:
-            <a href="mailto:usmannurainimohammad@gmail.com">usmannurainimohammad@gmail.com</a>
-          </p>
-          <p>
-            Phone:
-            <a href="tel:08063448848">08063448848</a>
-          </p>
-        </div>
       </div>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>© <span id="year"></span> <strong>Prof Nurain</strong>. All rights reserved.</p>
-      <p>A personal space for literature, art, and creative expression.</p>
+
+      <p class="footer-name">Prof Nurain</p>
+
+      <p>
+        Words, images, ideas, and a vision for tomorrow.
+      </p>
+
+      <p style="margin-top: 12px;">
+        &copy; <span id="currentYear"></span>
+        Nuraini Mohammad Usman. All rights reserved.
+      </p>
+
+      <p style="margin-top: 8px;">
+        Built with creativity and purpose.
+      </p>
+
     </div>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Mobile navigation menu
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "Close ✕" : "Menu ☰";
+    });
+
+    // Close menu after selecting a section
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "Menu ☰";
+      });
+    });
+
+    // Automatically update the copyright year
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>

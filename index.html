@@ -3,12 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Official biography website of Nuraini Mohammad Usman, popularly known as Prof Nurain. Explore his poetry, stories, photography, education and creative journey.">
+  <title>Prof Nurain | Biography, Poetry, Stories and Creative Work</title>
+  <meta name="description" content="Discover the life and journey of Nuraini Mohammad Usman, known as Prof Nurain: Nigerian poet, storyteller, photographer, creative artist, essayist, feminist, and Software Engineering student.">
   <meta name="author" content="Nuraini Mohammad Usman">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#142b24">
-
-  <title>Prof Nurain | Official Biography</title>
-
+  <!-- Official website address for search engines -->
+  <link rel="canonical" href="https://osmanyahya1986-code.github.io/prof-nurain-website/">
+  <!-- Social media sharing metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://osmanyahya1986-code.github.io/prof-nurain-website/">
+  <meta property="og:title" content="Prof Nurain | Official Biography">
+  <meta property="og:description" content="Explore the biography, educational journey, creative interests, and future ambitions of Nuraini Mohammad Usman, popularly known as Prof Nurain.">
+  <meta property="og:site_name" content="Prof Nurain">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Prof Nurain | Official Biography">
+  <meta name="twitter:description" content="Discover the life, creativity, education, and ambitions of Nuraini Mohammad Usman, known as Prof Nurain.">
+  <!-- Structured information for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nuraini Mohammad Usman",
+    "alternateName": "Prof Nurain",
+    "url": "https://osmanyahya1986-code.github.io/prof-nurain-website/",
+    "description": "Nigerian poet, storyteller, photographer, creative artist, essayist, feminist, and Software Engineering student.",
+    "email": "usmannurainimohammad@gmail.com",
+    "telephone": "+2348063448848",
+    "sameAs": [
+      "https://www.instagram.com/nurainimohammadu",
+      "https://x.com/prof_Nurain",
+      "https://www.facebook.com/share/19iP1weZt3/",
+      "https://www.tiktok.com/@nurainimohammadusman",
+      "https://youtube.com/@nurainimohammadusman",
+      "https://www.linkedin.com/in/nuraini-mohammad-usman-272053375"
+    ]
+  }
+  </script>
   <style>
     :root {
       --green: #142b24;
@@ -20,50 +52,46 @@
       --muted: #6c746e;
       --border: #e4ded1;
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     html {
       scroll-behavior: smooth;
       scroll-padding-top: 90px;
     }
-
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--cream);
       color: var(--text);
       line-height: 1.8;
     }
-
     a {
       color: inherit;
       text-decoration: none;
     }
-
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
     .container {
       width: min(1100px, 90%);
       margin: auto;
     }
-
     h1, h2, h3 {
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.3;
     }
-
     h2 {
       font-size: clamp(1.8rem, 4vw, 2.6rem);
       color: var(--green);
       margin-bottom: 18px;
     }
-
     .section {
       padding: 75px 0;
     }
-
     .eyebrow {
       color: var(--gold);
       text-transform: uppercase;
@@ -72,15 +100,12 @@
       font-weight: bold;
       margin-bottom: 12px;
     }
-
     .section-intro {
       color: var(--muted);
       max-width: 700px;
       margin-bottom: 30px;
     }
-
     /* Navigation */
-
     header {
       position: sticky;
       top: 0;
@@ -89,7 +114,6 @@
       color: white;
       box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
     }
-
     .navbar {
       min-height: 74px;
       display: flex;
@@ -97,7 +121,6 @@
       justify-content: space-between;
       gap: 20px;
     }
-
     .logo {
       color: #e1c18b;
       font-family: Georgia, serif;
@@ -105,22 +128,18 @@
       font-weight: bold;
       white-space: nowrap;
     }
-
     .nav-links {
       display: flex;
       align-items: center;
       gap: 20px;
       list-style: none;
     }
-
     .nav-links a {
       font-size: 0.9rem;
     }
-
     .nav-links a:hover {
       color: #e1c18b;
     }
-
     .menu-toggle {
       display: none;
       background: transparent;
@@ -130,9 +149,7 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
     /* Home and photograph */
-
     .hero {
       background:
         radial-gradient(circle at 90% 15%,
@@ -141,41 +158,34 @@
       color: white;
       padding: 85px 0;
     }
-
     .hero-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
       align-items: center;
       gap: 55px;
     }
-
     .hero .eyebrow {
       color: #e1c18b;
     }
-
     .hero h1 {
       font-size: clamp(2.3rem, 5vw, 4.3rem);
       margin-bottom: 20px;
       overflow-wrap: anywhere;
     }
-
     .hero h1 span {
       color: #e1c18b;
     }
-
     .hero-description {
       max-width: 720px;
       color: #e0e6e1;
       font-size: 1.1rem;
       margin-bottom: 30px;
     }
-
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
-
     .button {
       display: inline-block;
       padding: 12px 22px;
@@ -184,24 +194,18 @@
       font-weight: bold;
       transition: opacity 0.2s;
     }
-
     .button-primary {
       background: var(--gold);
       color: white;
     }
-
     .button-outline {
       color: white;
       border-color: #e1c18b;
     }
-
     .button:hover {
       opacity: 0.85;
     }
-
-    /* Temporary portrait placeholder.
-       Later, replace this placeholder with the real image. */
-
+    /* Temporary portrait placeholder */
     .portrait-frame {
       width: 100%;
       max-width: 340px;
@@ -211,7 +215,6 @@
       border-radius: 180px 180px 12px 12px;
       background: rgba(255, 255, 255, 0.04);
     }
-
     .portrait-placeholder {
       aspect-ratio: 4 / 5;
       border-radius: 170px 170px 6px 6px;
@@ -229,7 +232,6 @@
       text-align: center;
       padding: 24px;
     }
-
     .portrait-symbol {
       width: 86px;
       height: 86px;
@@ -243,19 +245,16 @@
       font-family: Georgia, serif;
       font-size: 2.5rem;
     }
-
     .portrait-placeholder h2 {
       color: #e1c18b;
       font-size: 1.25rem;
       margin-bottom: 8px;
     }
-
     .portrait-placeholder p {
       color: #e0e6e1;
       font-size: 0.9rem;
       line-height: 1.6;
     }
-
     .portrait-caption {
       color: #e1c18b;
       font-size: 0.78rem;
@@ -264,20 +263,16 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
-
     /* Biography */
-
     .about-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 40px;
       align-items: start;
     }
-
     .about-text p {
       margin-bottom: 18px;
     }
-
     .quote-card {
       padding: 30px;
       border-left: 5px solid var(--gold);
@@ -285,88 +280,71 @@
       background: var(--green);
       color: white;
     }
-
     .quote-card h3 {
       color: #e1c18b;
       font-size: 1.5rem;
       margin-bottom: 15px;
     }
-
     /* Education */
-
     .education,
     .works {
       background: #efe9dc;
     }
-
     .education-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
     }
-
     .education-card {
       padding: 25px;
       background: white;
       border-bottom: 3px solid var(--gold);
       border-radius: 6px;
     }
-
     .education-card h3 {
       color: var(--green);
       margin-bottom: 10px;
     }
-
     .current-study {
       grid-column: 1 / -1;
       background: var(--green);
       color: white;
     }
-
     .current-study h3 {
       color: #e1c18b;
     }
-
     /* Creative interests */
-
     .creative-grid,
     .works-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
     }
-
     .creative-card {
       background: rgba(255, 255, 255, 0.75);
       border: 1px solid var(--border);
       border-radius: 6px;
       padding: 25px;
     }
-
     .creative-card .number {
       font-family: Georgia, serif;
       color: var(--gold);
       font-size: 2rem;
     }
-
     .creative-card h3 {
       color: var(--green);
       margin: 8px 0;
     }
-
     .creative-card p {
       color: var(--muted);
     }
-
     /* Featured works */
-
     .work-card {
       background: white;
       border: 1px solid var(--border);
       border-radius: 6px;
       overflow: hidden;
     }
-
     .work-art {
       min-height: 150px;
       display: flex;
@@ -377,21 +355,17 @@
       font-family: Georgia, serif;
       font-size: 2.5rem;
     }
-
     .work-content {
       padding: 22px;
     }
-
     .work-content h3 {
       color: var(--green);
       margin-bottom: 10px;
     }
-
     .work-content p {
       color: var(--muted);
       margin-bottom: 15px;
     }
-
     .placeholder-label {
       display: inline-block;
       background: #f3ead8;
@@ -400,45 +374,35 @@
       font-size: 0.8rem;
       border-radius: 3px;
     }
-
     /* Future ambition */
-
     .ambition {
       background: var(--green);
       color: white;
     }
-
     .ambition h2 {
       color: white;
     }
-
     .ambition .section-intro {
       color: #e0e6e1;
     }
-
     .ambition-text {
       max-width: 800px;
       border-left: 4px solid var(--gold);
       padding-left: 25px;
     }
-
     .ambition-text p {
       margin-bottom: 16px;
       color: #e0e6e1;
     }
-
     /* Contact */
-
     .contact {
       background: var(--cream);
     }
-
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
-
     .contact-card {
       min-width: 0;
       padding: 22px;
@@ -448,53 +412,44 @@
       overflow-wrap: anywhere;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-
     .contact-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 18px rgba(20, 43, 36, 0.08);
     }
-
     .contact-card h3 {
       color: var(--green);
       font-size: 1.15rem;
       margin-bottom: 7px;
     }
-
     .contact-card p {
       color: var(--muted);
       font-size: 0.9rem;
       margin-bottom: 5px;
     }
-
     .contact-card a {
       color: #8a622e;
       font-weight: 600;
       overflow-wrap: anywhere;
     }
-
     .contact-card a:hover {
       text-decoration: underline;
     }
-
     .contact-icon {
       font-size: 1.5rem;
       margin-bottom: 7px;
     }
-
     .social-heading {
       margin-top: 40px;
       color: var(--green);
       font-family: Georgia, serif;
       font-size: 1.5rem;
     }
-
     .social-links {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 18px;
     }
-
     .social-links a {
       display: inline-block;
       padding: 9px 16px;
@@ -504,65 +459,51 @@
       font-weight: bold;
       transition: 0.2s;
     }
-
     .social-links a:hover {
       background: var(--green);
       color: white;
     }
-
     /* Footer */
-
     footer {
       background: #0c1d17;
       color: #d5ddd7;
       padding: 30px 0;
       text-align: center;
     }
-
     .footer-name {
       color: #e1c18b;
       font-family: Georgia, serif;
       font-size: 1.4rem;
       margin-bottom: 5px;
     }
-
     footer p {
       font-size: 0.9rem;
     }
-
     /* Tablet */
-
     @media (max-width: 850px) {
       .nav-links {
         gap: 12px;
       }
-
       .nav-links a {
         font-size: 0.8rem;
       }
-
       .hero-grid {
         grid-template-columns: minmax(0, 1fr) minmax(200px, 0.7fr);
         gap: 28px;
       }
-
       .creative-grid,
       .works-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
-
     /* Mobile */
-
     @media (max-width: 650px) {
       .menu-toggle {
         display: block;
       }
-
       .navbar {
         min-height: 70px;
       }
-
       .nav-links {
         display: none;
         position: absolute;
@@ -575,39 +516,31 @@
         align-items: stretch;
         gap: 0;
       }
-
       .nav-links.open {
         display: flex;
       }
-
       .nav-links a {
         display: block;
         padding: 9px 0;
         font-size: 1rem;
       }
-
       .hero {
         padding: 60px 0;
       }
-
       .hero-grid {
         grid-template-columns: 1fr;
         gap: 35px;
       }
-
       .hero h1 {
         font-size: clamp(2.2rem, 10vw, 3.4rem);
       }
-
       .portrait-frame {
         width: min(100%, 300px);
         justify-self: center;
       }
-
       .section {
         padding: 55px 0;
       }
-
       .about-grid,
       .education-grid,
       .creative-grid,
@@ -615,44 +548,37 @@
       .contact-grid {
         grid-template-columns: 1fr;
       }
-
       .current-study {
         grid-column: auto;
       }
-
       .hero-description {
         font-size: 1rem;
       }
     }
-
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
       }
-
       * {
         transition: none !important;
       }
     }
   </style>
 </head>
-
 <body>
-
   <!-- MAIN NAVIGATION -->
   <header>
     <nav class="navbar container" aria-label="Main navigation">
       <a class="logo" href="#home">Prof Nurain.</a>
-
       <button
         class="menu-toggle"
         id="menuToggle"
         type="button"
         aria-expanded="false"
-        aria-controls="navLinks">
+        aria-controls="navLinks"
+        aria-label="Open navigation menu">
         Menu ☰
       </button>
-
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">Biography</a></li>
@@ -663,40 +589,31 @@
       </ul>
     </nav>
   </header>
-
   <main>
-
     <!-- HOME AND PHOTOGRAPH PLACEHOLDER -->
     <section class="hero" id="home">
       <div class="container hero-grid">
-
         <div class="hero-content">
           <p class="eyebrow">Writer · Artist · Technologist</p>
-
           <h1>
             Nuraini Mohammad Usman,
             <span>Prof Nurain.</span>
           </h1>
-
           <p class="hero-description">
             A Nigerian poet, storyteller, photographer, creative
             artist, essayist, and proud feminist. His artistry flows
             through words, images, and emotions, blending creativity
             with conviction to tell stories that matter.
           </p>
-
           <div class="hero-buttons">
             <a href="#about" class="button button-primary">
               Discover My Story
             </a>
-
             <a href="#works" class="button button-outline">
               Explore My Works
             </a>
           </div>
         </div>
-
-        <!-- Replace this placeholder with the real portrait later. -->
         <div class="portrait-frame">
           <div class="portrait-placeholder">
             <div class="portrait-symbol" aria-hidden="true">N</div>
@@ -707,16 +624,13 @@
           </div>
           <p class="portrait-caption">Nuraini Mohammad Usman</p>
         </div>
-
       </div>
     </section>
-
     <!-- BIOGRAPHY -->
     <section class="section" id="about">
       <div class="container">
         <p class="eyebrow">The Story Behind the Name</p>
         <h2>About Prof Nurain</h2>
-
         <div class="about-grid">
           <div class="about-text">
             <p>
@@ -727,28 +641,24 @@
               and emotions, blending creativity with conviction
               to tell stories that matter.
             </p>
-
             <p>
               Born into and raised in the Muyawa family in Kano
               State, and brought up in Minna, Niger State,
               Nuraini's diverse background deeply influences his
               artistic vision and expression.
             </p>
-
             <p>
               His interests span literature, visual storytelling,
               photography, and the relationship between technology
               and creativity. He uses creative expression to explore
               ideas, emotions, and human experiences.
             </p>
-
             <p>
               Currently pursuing Software Engineering, Nuraini
               continues to develop his artistic voice while
               building his technical knowledge.
             </p>
           </div>
-
           <aside class="quote-card">
             <h3>Creativity with Conviction</h3>
             <p>
@@ -764,18 +674,15 @@
         </div>
       </div>
     </section>
-
     <!-- EDUCATION -->
     <section class="section education" id="education">
       <div class="container">
         <p class="eyebrow">Learning and Growth</p>
         <h2>Educational Journey</h2>
-
         <p class="section-intro">
           Each stage of Nuraini's education has contributed to
           his development and ambitions.
         </p>
-
         <div class="education-grid">
           <article class="education-card">
             <h3>01. Dayamas Model School</h3>
@@ -784,14 +691,12 @@
               and nursery education.
             </p>
           </article>
-
           <article class="education-card">
             <h3>02. Better Treasure International School</h3>
             <p>
               Continued his education at the primary school level.
             </p>
           </article>
-
           <article class="education-card">
             <h3>03. Al-Fawzu Azeem Academy</h3>
             <p>
@@ -799,7 +704,6 @@
               the foundation for further academic growth.
             </p>
           </article>
-
           <article class="education-card">
             <h3>04. Legend International School</h3>
             <p>
@@ -807,7 +711,6 @@
               at Legend International School.
             </p>
           </article>
-
           <article class="education-card current-study">
             <h3>
               05. Maryam Abacha American University of Niger
@@ -826,18 +729,15 @@
         </div>
       </div>
     </section>
-
     <!-- CREATIVE INTERESTS -->
     <section class="section" id="creative">
       <div class="container">
         <p class="eyebrow">Many Interests, One Vision</p>
         <h2>The Creative World of Prof Nurain</h2>
-
         <p class="section-intro">
           From the written word to the captured image, Nuraini
           explores different ways of expressing ideas and emotions.
         </p>
-
         <div class="creative-grid">
           <article class="creative-card">
             <div class="number">01</div>
@@ -847,7 +747,6 @@
               perspectives through poetry.
             </p>
           </article>
-
           <article class="creative-card">
             <div class="number">02</div>
             <h3>Storytelling</h3>
@@ -856,7 +755,6 @@
               original stories and narratives.
             </p>
           </article>
-
           <article class="creative-card">
             <div class="number">03</div>
             <h3>Photography</h3>
@@ -865,7 +763,6 @@
               through visual storytelling.
             </p>
           </article>
-
           <article class="creative-card">
             <div class="number">04</div>
             <h3>Creative Art</h3>
@@ -874,7 +771,6 @@
               expression through visual creativity.
             </p>
           </article>
-
           <article class="creative-card">
             <div class="number">05</div>
             <h3>Essays and Writing</h3>
@@ -883,7 +779,6 @@
               through essays and written expression.
             </p>
           </article>
-
           <article class="creative-card">
             <div class="number">06</div>
             <h3>Feminism</h3>
@@ -895,19 +790,16 @@
         </div>
       </div>
     </section>
-
     <!-- FEATURED WORKS -->
     <section class="section works" id="works">
       <div class="container">
         <p class="eyebrow">Ideas Becoming Art</p>
         <h2>Featured Works</h2>
-
         <p class="section-intro">
           This section is ready for Nuraini's original poems,
           stories, essays, photographs, and other creative works.
           These are placeholders until the actual works are added.
         </p>
-
         <div class="works-grid">
           <article class="work-card">
             <div class="work-art" aria-hidden="true">01</div>
@@ -920,7 +812,6 @@
               <span class="placeholder-label">Work coming soon</span>
             </div>
           </article>
-
           <article class="work-card">
             <div class="work-art" aria-hidden="true">02</div>
             <div class="work-content">
@@ -932,7 +823,6 @@
               <span class="placeholder-label">Work coming soon</span>
             </div>
           </article>
-
           <article class="work-card">
             <div class="work-art" aria-hidden="true">03</div>
             <div class="work-content">
@@ -947,13 +837,11 @@
         </div>
       </div>
     </section>
-
     <!-- FUTURE AMBITION -->
     <section class="section ambition" id="ambition">
       <div class="container">
         <p class="eyebrow">Looking Ahead</p>
         <h2>A Vision for the Future</h2>
-
         <div class="ambition-text">
           <p>
             Ambitious and driven by purpose, Nuraini dreams
@@ -961,14 +849,12 @@
             this vision with passion, discipline, and the
             steadfast support of his parents.
           </p>
-
           <p>
             As he advances in Software Engineering and develops
             his artistic abilities, he hopes to keep learning,
             sharing knowledge, and contributing meaningfully
             through education and creativity.
           </p>
-
           <p>
             His journey stands as a testament to talent,
             resilience, and the power of creativity to
@@ -977,19 +863,16 @@
         </div>
       </div>
     </section>
-
     <!-- CONTACT INFORMATION -->
     <section class="section contact" id="contact">
       <div class="container">
         <p class="eyebrow">Let's Connect</p>
         <h2>Contact Prof Nurain</h2>
-
         <p class="section-intro">
           Connect with Nuraini Mohammad Usman through his
           social media profiles, send him an email, or contact
           him by telephone.
         </p>
-
         <div class="contact-grid">
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">✉</div>
@@ -999,14 +882,12 @@
               usmannurainimohammad@gmail.com
             </a>
           </article>
-
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">☎</div>
             <h3>Phone Number</h3>
             <p>Call or save the contact.</p>
             <a href="tel:+2348063448848">08063448848</a>
           </article>
-
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">◎</div>
             <h3>Instagram</h3>
@@ -1015,7 +896,6 @@
               @nurainimohammadu
             </a>
           </article>
-
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">𝕏</div>
             <h3>X / Twitter</h3>
@@ -1024,7 +904,6 @@
               @prof_Nurain
             </a>
           </article>
-
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">f</div>
             <h3>Facebook</h3>
@@ -1033,7 +912,6 @@
               Visit Facebook
             </a>
           </article>
-
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">♪</div>
             <h3>TikTok</h3>
@@ -1042,7 +920,6 @@
               @nurainimohammadusman
             </a>
           </article>
-
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">▶</div>
             <h3>YouTube</h3>
@@ -1051,7 +928,6 @@
               Prof Nurain on YouTube
             </a>
           </article>
-
           <article class="contact-card">
             <div class="contact-icon" aria-hidden="true">in</div>
             <h3>LinkedIn</h3>
@@ -1061,9 +937,7 @@
             </a>
           </article>
         </div>
-
         <h3 class="social-heading">Find Me on Social Media</h3>
-
         <div class="social-links">
           <a href="https://www.instagram.com/nurainimohammadu?exln=MTM4c2N2N2l6eGdjYw==" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="https://x.com/prof_Nurain" target="_blank" rel="noopener noreferrer">X / Twitter</a>
@@ -1074,51 +948,46 @@
         </div>
       </div>
     </section>
-
   </main>
-
   <!-- FOOTER -->
   <footer>
     <div class="container">
       <p class="footer-name">Prof Nurain</p>
       <p>Words, images, ideas, and a vision for tomorrow.</p>
-
       <p style="margin-top: 12px;">
         &copy; <span id="currentYear"></span>
         Nuraini Mohammad Usman. All rights reserved.
       </p>
-
       <p style="margin-top: 8px;">
         Built with creativity and purpose.
       </p>
     </div>
   </footer>
-
   <script>
     // Mobile navigation menu
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
-
     menuToggle.addEventListener("click", function () {
       const isOpen = navLinks.classList.toggle("open");
-
       menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
       menuToggle.textContent = isOpen ? "Close ✕" : "Menu ☰";
     });
-
     // Close menu after selecting a section
     navLinks.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
         navLinks.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
         menuToggle.textContent = "Menu ☰";
       });
     });
-
     // Automatically update the copyright year
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
   </script>
-
 </body>
 </html>

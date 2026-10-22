@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://osmanyahya1986-code.github.io/prof-nurain-website/sitemap.xml
